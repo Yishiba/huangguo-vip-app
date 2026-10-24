@@ -1,0 +1,13 @@
+# This is a generated file; do not edit or check into version control.
+path_provider_linux=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
+path_provider_windows=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
+shared_preferences=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/shared_preferences-2.5.3/
+shared_preferences_android=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.7/
+shared_preferences_foundation=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.4/
+shared_preferences_linux=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.4.1/
+shared_preferences_web=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/shared_preferences_web-2.4.3/
+shared_preferences_windows=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.4.1/
+video_player=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/video_player-2.9.5/
+video_player_android=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/video_player_android-2.7.16/
+video_player_avfoundation=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.7.1/
+video_player_web=/vol1/@appshare/octop-native/data/.pub-cache/hosted/pub.dev/video_player_web-2.3.5/

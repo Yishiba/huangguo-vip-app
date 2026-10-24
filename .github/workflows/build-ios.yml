@@ -1,0 +1,35 @@
+name: Build iOS IPA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.5'
+          channel: stable
+          cache: true
+      - name: Flutter pub get
+        run: flutter pub get
+      - name: Build iOS (no codesign)
+        run: flutter build ios --release --no-codesign
+      - name: Package unsigned IPA
+        run: |
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          cp -r Runner.app Payload/
+          zip -qry ../huangguo-vip-unsigned.ipa Payload
+          ls -lh ../huangguo-vip-unsigned.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: huangguo-vip-ipa
+          path: build/ios/iphoneos/huangguo-vip-unsigned.ipa
+          retention-days: 30
