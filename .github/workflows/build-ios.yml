@@ -26,8 +26,8 @@ jobs:
           cd build/ios/iphoneos
           mkdir -p Payload
           cp -r Runner.app Payload/
-          zip -qry ../huangguo-vip-unsigned.ipa Payload
-          ls -lh ../huangguo-vip-unsigned.ipa
+          zip -qry huangguo-vip-unsigned.ipa Payload
+          ls -lh huangguo-vip-unsigned.ipa
       - uses: actions/upload-artifact@v4
         with:
           name: huangguo-vip-ipa
