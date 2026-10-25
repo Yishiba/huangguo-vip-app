@@ -164,15 +164,56 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _showFilterDialog() {
-    showDialog(context: context, builder: (ctx) => AlertDialog(
-          title: const Text('筛选条件'),
-          content: Column(mainAxisSize: MainAxisSize.min, children: [
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('筛选条件'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
             const Text('排序'),
-            Row(children: ['hot', 'new'].map((s) => Expanded(child: ListTile(title: Text(s == 'hot' ? '最热' : '最新'), leading: Radio<String>(value: s, groupValue: _filterSort, onChanged: (v) { showDialog<String>(context: ctx, builder: (_) => const SizedBox()); },)),)).toList())),
+            Row(
+              children: ['hot', 'new']
+                  .map((s) => Expanded(
+                        child: ListTile(
+                          title: Text(s == 'hot' ? '最热' : '最新'),
+                          leading: Radio<String>(
+                            value: s,
+                            groupValue: _filterSort,
+                            onChanged: (v) {
+                              showDialog<String>(
+                                context: ctx,
+                                builder: (_) => const SizedBox(),
+                              );
+                            },
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            ),
             const SizedBox(height: 8),
             const Text('状态'),
-            Row(children: ['all', 'finished', 'unfinished'].map((s) => Expanded(child: ListTile(title: Text(s == 'all' ? '全部' : s == 'finished' ? '已完结' : '连载中'), leading: Radio<String>(value: s, groupValue: _filterStatus, onChanged: (v) { _onFilterChange(); },)),)).toList())),
-          ]),
+            Row(
+              children: ['all', 'finished', 'unfinished']
+                  .map((s) => Expanded(
+                        child: ListTile(
+                          title: Text(s == 'all'
+                              ? '全部'
+                              : s == 'finished'
+                                  ? '已完结'
+                                  : '连载中'),
+                          leading: Radio<String>(
+                            value: s,
+                            groupValue: _filterStatus,
+                            onChanged: (v) {
+                              _onFilterChange();
+                            },
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            ),
+          ],
           actions: [TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('取消')), TextButton(onPressed: _onFilterChange, child: const Text('确定'))],
         ));
   }
