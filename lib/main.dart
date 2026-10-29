@@ -17,9 +17,11 @@ class HuangguoVIPApp extends StatelessWidget {
     return MaterialApp(
       title: '黄果短剧 VIP版',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.amber,
+          brightness: Brightness.dark,
+        ),
         useMaterial3: true,
-        brightness: Brightness.dark,
       ),
       home: const HomePage(),
     );
